@@ -1,8 +1,9 @@
 # Basic OS
 
 A tiny x86 operating system: an assembly bootloader that switches the CPU to
-32-bit protected mode and loads a minimal C kernel, which prints a message on
-screen to confirm it was loaded.
+32-bit protected mode and loads a minimal C kernel, which had a very basic screen management system (it displays messages in different colors using a function, and automatically scrolls if the text goes off the screen).
+
+---
 
 ## How it works
 
@@ -19,18 +20,17 @@ screen to confirm it was loaded.
 
 ## Requirements
 
-- Windows with PowerShell and WSL (Fedora)
+- Windows with PowerShell and WSL
 - Inside WSL: `sudo dnf install gcc binutils nasm make`
 - QEMU for Windows, available in your `PATH`
 
-Using another distribution? Edit `build/build.sh` accordingly.
 
 ## Build and run
 
 ```powershell
 git clone https://github.com/Veyler/Basic-OS
 cd Basic-OS/build
-. ./build.ps1   # loads the build function into your session
+. ./build.ps1
 build
 ```
 
@@ -41,4 +41,10 @@ bash build/build.sh
 qemu-system-i386 -drive format=raw,file=data/os.img
 ```
 
+## To add
+
+- function to display integers and hexadecimal values
+- manage the keyboard
+
+---
 Tips and suggestions are welcome!
