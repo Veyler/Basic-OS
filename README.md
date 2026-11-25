@@ -18,26 +18,32 @@ and automatically scrolls if the text goes off the screen).
 
 - `src/bootloader/`: bootloader (NASM)
 - `src/kernel/`: kernel (C)
-- `build/`: build scripts (`build.ps1` for PowerShell, `Makefile` for WSL/Linux) and linker script
+- `build/`: build scripts (`build.sh`, `Makefile`) and linker script
 - `build/data/`: build output (ignored by git)
 
 ## Requirements
 
-- Windows with PowerShell and WSL
-- Inside WSL: `gcc`, `binutils`, `nasm`, `make` (install with your distro's package manager, e.g. `sudo apt install gcc binutils nasm make` on Ubuntu)
-- QEMU for Windows, available in your `PATH`
+- If you are on Windows, WSL
+- Inside WSL / Linux : `gcc`, `binutils`, `nasm`, `make`
+- QEMU
+
+## Contribute
+
+```bash
+git clone https://github.com/Veyler/Basic-OS
+```
 
 ## Build and run
 
 ```bash
-source ./build.sh && build
-source ./build.sh && run
+cd build
+./build.sh
 ```
 
 ## To add
 
-- function to display integers and hexadecimal values
-- manage the keyboard
+- function to display integers values
+- a keyboard driver
 
 ---
 

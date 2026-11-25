@@ -29,8 +29,8 @@ void print_hex(uint64_t n, int color){
         hex[i--] = '0';
     } else {
         while (n > 0){
-            hex[i--] = chars[n & 0xF];    // On récupère les 4 derniers bits
-            n >>= 4;                      // Décaler de 4 birs vers la droite
+            hex[i--] = chars[n & 0xF];    // We extract the last 4 bits
+            n >>= 4;                      // Shift 4 bits to the right
         }
     }
 

@@ -37,7 +37,7 @@ main:
 disk_error:
     mov ax, 0xB800
     mov gs, ax
-    mov word [gs:0], 0x0C45 ; 'E' en rouge
+    mov word [gs:0], 0x0C45 ; 'E' in red
     jmp hang
 
 boot_drive: db 0
