@@ -1,7 +1,9 @@
 # Basic OS
 
 A tiny x86 operating system: an assembly bootloader that switches the CPU to
-32-bit protected mode and loads a minimal C kernel, which had a very basic screen management system (it displays messages in different colors using a function, and automatically scrolls if the text goes off the screen).
+32-bit protected mode and loads a minimal C kernel, which has a basic screen
+management system (it displays messages in different colors using a function,
+and automatically scrolls if the text goes off the screen).
 
 ---
 
@@ -16,29 +18,20 @@ A tiny x86 operating system: an assembly bootloader that switches the CPU to
 
 - `src/bootloader/`: bootloader (NASM)
 - `src/kernel/`: kernel (C)
-- `build/`: build scripts and linker script
+- `build/`: build scripts (`build.ps1` for PowerShell, `Makefile` for WSL/Linux) and linker script
+- `build/data/`: build output (ignored by git)
 
 ## Requirements
 
 - Windows with PowerShell and WSL
-- Inside WSL: `sudo dnf install gcc binutils nasm make`
+- Inside WSL: `gcc`, `binutils`, `nasm`, `make` (install with your distro's package manager, e.g. `sudo apt install gcc binutils nasm make` on Ubuntu)
 - QEMU for Windows, available in your `PATH`
-
 
 ## Build and run
 
-```powershell
-git clone https://github.com/Veyler/Basic-OS
-cd Basic-OS/build
-. ./build.ps1
-build
-```
-
-On Linux, from the project root:
-
 ```bash
-bash build/build.sh
-qemu-system-i386 -drive format=raw,file=data/os.img
+source ./build.sh && build
+source ./build.sh && run
 ```
 
 ## To add
@@ -47,4 +40,5 @@ qemu-system-i386 -drive format=raw,file=data/os.img
 - manage the keyboard
 
 ---
+
 Tips and suggestions are welcome!
